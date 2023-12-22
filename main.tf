@@ -48,8 +48,10 @@ resource "aws_instance" "generic_instance" {
 exec > /tmp/setup.log 2>&1
 
 ### Install Docker #############################################################
-echo "SWEET"
-
+yum install -y jq
+yum install -y yum-utils
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+yum install -y docker-ce docker-ce-cli containerd.io
 EOF
 
 }
