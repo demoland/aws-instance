@@ -20,10 +20,11 @@ variable "instance_type" {
 variable "volume_size" {
   description = "Volume Size in GB"
   type        = number
-  default     = 100
+  default     = 50
 }
 
-variable "ubuntu_token" {
-  description = "Token from the Ubuntu pro dashboard "
+variable "management_pubkey" {
+  description = "Management Public Key"
+  sensitive   = true
   type        = string
 }
