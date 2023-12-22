@@ -49,7 +49,6 @@ exec > /tmp/setup.log 2>&1
 
 ### Install Docker #############################################################
 echo "SWEET"
-echo "${aws_instance.generic_instance.public_ip}"
 
 EOF
 
