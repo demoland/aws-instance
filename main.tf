@@ -48,18 +48,18 @@ resource "aws_instance" "generic_instance" {
 #!/bin/bash
 exec > /tmp/setup.log 2>&1
 
-### Install Docker #############################################################
-sudo yum install -y jq
-sudo yum install -y yum-utils
-sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-sudo yum install -y docker-ce docker-ce-cli containerd.io
+# ### Install Docker #############################################################
+# sudo yum install -y jq
+# sudo yum install -y yum-utils
+# sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+# sudo yum install -y docker-ce docker-ce-cli containerd.io
 
-### Install Docker Compose #####################################################
-sudo yum install -y python3-pip
-sudo pip3 install docker-compose
+# ### Install Docker Compose #####################################################
+# sudo yum install -y python3-pip
+# sudo pip3 install docker-compose
 
-### Install AWS CLI ############################################################
-sudo pip3 install awscli --upgrade
+# ### Install AWS CLI ############################################################
+# sudo pip3 install awscli --upgrade
 
 EOF
 
