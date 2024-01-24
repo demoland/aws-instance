@@ -28,3 +28,9 @@ variable "management_pubkey" {
   sensitive   = true
   type        = string
 }
+
+variable "ami_id" {
+  description = "AMI ID"
+  type        = string
+  default     = ""
+}

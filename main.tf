@@ -3,6 +3,7 @@ locals {
   region      = "us-east-2"
 }
 
+#If the ami_id variable is not set, then use the following data source to get the value
 data "aws_ami" "rhel_8" {
   owners      = ["self"]
   most_recent = true
@@ -18,7 +19,7 @@ locals {
   vpc_id          = data.terraform_remote_state.vpc.outputs.vpc_id
   my_ip           = var.my_ip
   cidr_block      = var.cidr_block
-  ami_id          = data.aws_ami.rhel_8.image_id
+  ami_id          = var.ami_id != "" ? var.ami_id : data.aws_ami.rhel_8.image_id
   management_key  = "management"
   ssh_sg          = aws_security_group.ssh_sg.id
   instance_type   = var.instance_type
