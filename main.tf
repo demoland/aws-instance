@@ -38,6 +38,7 @@ resource "aws_instance" "generic_instance" {
   associate_public_ip_address = true
   tags = {
     Name = "aws-instance-${count.index}",
+    Demo = "Test"
   }
 
   root_block_device {
