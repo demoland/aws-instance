@@ -10,13 +10,13 @@ data "terraform_remote_state" "vpc" {
   }
 }
 
-data "terraform_remote_state" "kms" {
-  backend = "remote"
+# data "terraform_remote_state" "kms" {
+#   backend = "remote"
 
-  config = {
-    organization = "demo-land"
-    workspaces = {
-      name = "aws-kms"
-    }
-  }
-}
+#   config = {
+#     organization = "demo-land"
+#     workspaces = {
+#       name = "aws-kms"
+#     }
+#   }
+# }
