@@ -40,7 +40,7 @@ resource "aws_instance" "generic_instance" {
     Name = "aws-instance-${count.index}",
     WORKSHOP = "Terraform"
     TEAM = "76sweg"
-    FOO = "BAR"
+    FOO = "BARZ"
   }
 
   root_block_device {
