@@ -39,7 +39,7 @@ resource "aws_instance" "generic_instance" {
   tags = {
     Name     = "aws-instance-${count.index}",
     WORKSHOP = "Terraform"
-    TEAM     = "NGC"
+    TEAM     = "NNGGC"
     FOO      = "BARZ"
   }
 
