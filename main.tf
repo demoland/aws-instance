@@ -37,10 +37,10 @@ resource "aws_instance" "generic_instance" {
   iam_instance_profile        = aws_iam_instance_profile.generic_instance.name
   associate_public_ip_address = true
   tags = {
-    Name = "aws-instance-${count.index}",
+    Name     = "aws-instance-${count.index}",
     WORKSHOP = "Terraform"
-    TEAM = "76sweg"
-    FOO = "BARZ"
+    TEAM     = "NGC"
+    FOO      = "BARZ"
   }
 
   root_block_device {
