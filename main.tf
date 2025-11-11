@@ -39,8 +39,8 @@ resource "aws_instance" "generic_instance" {
   tags = {
     Name     = "aws-instance-${count.index}",
     WORKSHOP = "Terraform"
-    TEAM     = "NNGGC"
-    FOO      = "BARZ"
+    TEAM     = "NGC"
+    ENVIRONMENT = "Development"
   }
 
   root_block_device {
