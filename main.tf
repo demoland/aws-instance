@@ -26,7 +26,7 @@ locals {
   vpc_id          = data.terraform_remote_state.vpc.outputs.vpc_id
   my_ip           = var.my_ip
   cidr_block      = var.cidr_block
-  ami_id          = var.ami_id != "" ? var.ami_id : data.aws_ami.hc-base-ubuntu-2404
+  ami_id          = var.ami_id != "" ? var.ami_id : data.aws_ami.hc-base-ubuntu-2404[startswith(local.instance_type, "t4g") || startswith(local.instance_type, "m6g") || startswith(local.instance_type, "c6g") || startswith(local.instance_type, "r6g") ? "arm64" : "amd64"].id
   management_key  = "management"
   ssh_sg          = aws_security_group.ssh_sg.id
   instance_type   = var.instance_type
@@ -44,9 +44,9 @@ resource "aws_instance" "generic_instance" {
   iam_instance_profile        = aws_iam_instance_profile.generic_instance.name
   associate_public_ip_address = true
   tags = {
-    Name     = "aws-instance-${count.index}",
-    WORKSHOP = "Terraform"
-    TEAM     = "C2"
+    Name        = "aws-instance-${count.index}",
+    WORKSHOP    = "Terraform"
+    TEAM        = "C2"
     ENVIRONMENT = "Development"
   }
 
