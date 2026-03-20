@@ -1,0 +1,24 @@
+# Local terraform directories
+**/.terraform/*
+
+# .tfstate files are typically managed by Terraform Cloud, but might be generated locally
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Exclude terraform.tfvars as it may contain sensitive data
+*.tfvars
+*.tfvars.json
+
+# Override files should not be committed
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Include bundle mirror and provider cache
+.terraformrc
+terraform.rc
