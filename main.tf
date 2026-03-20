@@ -4,14 +4,21 @@ locals {
 }
 
 #If the ami_id variable is not set, then use the following data source to get the value
-data "aws_ami" "rhel_8" {
-  owners      = ["self"]
-  most_recent = true
+
+data "aws_ami" "hc-base-ubuntu-2404" {
+  for_each = toset(["amd64", "arm64"])
   filter {
     name   = "name"
-    values = ["packer-RHEL-8-stig-*"]
+    values = [format("hc-base-ubuntu-2404-%s-*", each.value)]
   }
+  filter {
+    name   = "state"
+    values = ["available"]
+  }
+  most_recent = true
+  owners      = ["888995627335"] # ami-prod account
 }
+
 
 locals {
   public_subnet_0 = element(data.terraform_remote_state.vpc.outputs.public_subnet_ids, 0)
