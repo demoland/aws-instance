@@ -48,6 +48,7 @@ resource "aws_instance" "generic_instance" {
     WORKSHOP    = "Terraform"
     TEAM        = "C2"
     ENVIRONMENT = "Development"
+    CLASS       = "IBM - ST OF TX"
   }
 
   root_block_device {
