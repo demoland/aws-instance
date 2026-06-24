@@ -3,7 +3,7 @@ data "terraform_remote_state" "vpc" {
   backend = "remote"
 
   config = {
-    organization = "demo-land"
+    organization = "osage"
     workspaces = {
       name = "aws-vpc"
     }
@@ -14,7 +14,7 @@ data "terraform_remote_state" "vpc" {
 #   backend = "remote"
 
 #   config = {
-#     organization = "demo-land"
+#     organization = "osage"
 #     workspaces = {
 #       name = "aws-kms"
 #     }
