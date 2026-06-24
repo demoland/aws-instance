@@ -1,7 +1,7 @@
 terraform {
-  required_version = "~> 1.5.2"
+  required_version = "~> 1.15"
   backend "remote" {
-    organization = "demo-land"
+    organization = "osage"
     workspaces {
       name = "aws-instance"
     }
