@@ -1,5 +1,6 @@
-# Local terraform directories
-**/.terraform/*
+# Local terraform directories (module root and examples)
+.terraform/
+**/.terraform/
 
 # .tfstate files are typically managed by Terraform Cloud, but might be generated locally
 *.tfstate
